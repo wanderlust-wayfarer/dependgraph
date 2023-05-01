@@ -1,0 +1,20 @@
+{
+  "name": "dependgraph",
+  "version": "1.0.0",
+  "description": "A dependency graph.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "dependency",
+    "graph",
+    "depgraph",
+    "dependgraph"
+  ],
+  "author": "Michael Pay",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "fs": "^0.0.1-security"
+  }
+}
