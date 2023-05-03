@@ -26,6 +26,7 @@ class DependGraph {
     fs.readFile(node, "utf8")
       .then((fileContent) => {
         // read all imports and requires
+        this.getImportPaths(node, fileContent);
         // for each, add edges
       })
       .catch((err) =>
@@ -53,6 +54,15 @@ class DependGraph {
       }
 
       visited.add(currentNode);
+    }
+  }
+
+  getImportPaths(node, fileContent) {
+    const importRegex = /import\s+(?:.+\s+from\s+)?[\'"](.+)[\'"]/g;
+
+    let match;
+    while ((match = importRegex.exec(fileContent)) !== null) {
+      this.nodes.get(node).imports.push(match[1]);
     }
   }
 }
